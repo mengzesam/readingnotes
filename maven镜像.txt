@@ -1,0 +1,30 @@
+Maven 配置
+
+全局设置镜像 /usr/share/maven/conf/setting.xml的<mirrors></mirrors>添加如下镜像
+<mirror>
+    <id>aliyunmaven</id>
+    <mirrorOf>*</mirrorOf>
+    <name>阿里云公共仓库</name>
+    <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+则用mvn package可使用此镜像，但是在spring项目中使用./mvnw命令不行，必须在
+用户目录的.m2文件夹下设置，即类似这样路径
+/home/mzs/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3/conf
+下的setting.xml
+才能在./mvnw使用镜像
+
+
+如果想使用其它代理仓库,可在<repositories></repositories>节点中加入对应的仓库使用地址。以使用spring代理仓为例：
+
+<repository>
+    <id>spring</id>
+    <url>https://maven.aliyun.com/repository/spring</url>
+    <releases>
+        <enabled>true</enabled>
+    </releases>
+    <snapshots>
+        <enabled>true</enabled>
+    </snapshots>
+</repository>
+
+
