@@ -1,0 +1,3 @@
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=a.pdf -f 1.pdf 2.pdf
+
+ls *.pdf |awk 'BEGIN{fns=""}{fns=fns" "$1}END{print "gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=out.pdf -dBATCH" fns}'|bash -
