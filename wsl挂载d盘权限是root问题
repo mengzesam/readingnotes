@@ -17,8 +17,7 @@ sudo nano /etc/wsl.conf
 enabled = true
 root = /mnt/
 #options = "metadata,umask=22,fmask=11"
-
-#options = "metadata,uid=1000,gid=1000" #当前用户
+options = "metadata,uid=1000,gid=1000" #当前用户
 mountFsTab = false
 
 #Let’s enable DNS – even though these are turned on by default, we’ll specify here just to be explicit.
