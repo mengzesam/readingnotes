@@ -1,3 +1,5 @@
+pom.xml
+
 	<repositories>
 		<repository>
 			<id>aliyun-central</id>
@@ -20,3 +22,21 @@
 			<optional>true</optional>
 			<scope>true</scope>
 		</dependency>
+
+package org.junit/runner does not exist：
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		  </dependency>
+
+settings.xml:
+
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
