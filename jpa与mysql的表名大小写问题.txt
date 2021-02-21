@@ -1,0 +1,5 @@
+1、mysql的table name 是case sensitive
+2、java spring中，即使在model class中定义时，即使加上 @Table(name="")，name是大写，jpa也会将之转为小写。
+3、如果resources中有import.sql文件，文件中还是用大写的table name，则会出错。
+
+https://blog.csdn.net/yb642518034/article/details/80248382
