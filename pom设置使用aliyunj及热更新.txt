@@ -15,6 +15,15 @@ pom.xml
 	</pluginRepositories>
 
 
+创建 Spring boot 项目，添加 JJWT 和 Spring Security 的项目依赖，这个非常简单，有很多的教程都有块内容，唯一需要注意的是，如果你使用的Java版本是11，那么你还需要添加以下依赖，使用 Java8 则不需要。
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+
 热更新：
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,3 +53,7 @@ settings.xml:
 vscode打开spring-boot项目，有时候右下角Java(select language mode） Java SE11（language level）之间的service ready一直旋转下载*javadoc.jar
 主要是Language Support for Java(TM) by Red Hat 插件，可以在pom.xml中加上面所说的镜像repository，下载的javadoc.jar一般保存在
 ~/.m2/repository目录下，如spring-boot-2.4.2-javadoc.jar保存在~/.m2/repository/org/springframework/boot/spring-boot/2.4.2
+
+
+
+
