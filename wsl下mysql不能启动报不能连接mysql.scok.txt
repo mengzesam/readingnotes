@@ -1,0 +1,13 @@
+mysql：
+主要是wsl下默认启动不了systemctl。
+
+先安装daemonize
+
+sudo apt-get install daemonize
+
+
+再执行以下命令开启
+
+sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+ 
+exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAM
