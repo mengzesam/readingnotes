@@ -1,0 +1,22 @@
+Language Support for Java(TM) by Red Hat插件原因，
+
+The Language Support for Java server crashed 5 times in the last 3 minutes. The server will not be restarted
+
+https://github.com/redhat-developer/vscode-java/issues/743 
+
+Thank you for giving me the "java.jdt.ls.vmargs" setting, I was able to figure out what was going wrong.
+
+I had installed the Lombok Annotations Support for VS Code extension awhile back and decided to remove it. However, the extension added some parameters to the java.jdt.ls.vmargs setting:
+"-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"C:\\Users\\SHall\\.vscode\\extensions\\gabrielbb.vscode-lombok-0.9.7/server/lombok.jar\" -Xbootclasspath/a:\"C:\\Users\\SHall\\.vscode\\extensions\\gabrielbb.vscode-lombok-0.9.7/server/lombok.jar\""
+
+When I removed the extension, the settings were still present but the Language Server was unable to the load the manifest from the lombok.jar file (because it was deleted). This caused the Language Server to fail to start.
+
+After adding the -Dlog.level=ALL parameter to the java.jdt.ls.vmargs setting, I was finally able to see the error in the output view. I've put the java.jdt.ls.vmargs setting back to its default value and everything is working properly again.
+
+Thank you for your help! You can close this issue.
+
+Thanks !! I had the same problem here . Installed lombok and after that deleted it but the settings for it remain, just deleted it.
+
+settings.json中
+找到"java.jdt.ls.vmargs" 项
+重置键值为 "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication"
