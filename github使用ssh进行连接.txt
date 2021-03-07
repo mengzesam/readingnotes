@@ -1,0 +1,22 @@
+https://blog.csdn.net/u013778905/article/details/83501204
+
+1、设置username email
+   git config --global user.name
+    git config --global user.email
+
+2、ssh-keygen -t rsa -C "mengzesam@126.com"
+记得输入passphaser（密码）
+3、cd ~/.ssh
+    ls
+    cat id_rsa.pub
+//拷贝秘钥 ssh-rsa开头
+
+4、网页登陆github个人设置里的SSH keys
+  new ssh key 
+然后黏贴刚才复制的ssh-rsa
+
+5、ssh -T git@github.com
+//运行结果出现类似如下
+Hi mengzesam! You've successfully authenticated, but GitHub does not provide shell access
+
+6、在原来的repository本地文件夹下的.git/config文件下修改repoistory url，将https地址替换为的ssh地址
