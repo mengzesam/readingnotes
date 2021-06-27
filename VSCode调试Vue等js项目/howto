@@ -1,0 +1,19 @@
+
+https://github.com/Microsoft/vscode-recipes/blob/master/vuejs-cli/README.md
+https://stackoverflow.com/questions/53899680/the-specified-task-cannot-be-tracked-when-trying-to-start-a-server-with-a-task
+https://vcfvct.wordpress.com/2019/01/11/debug-browser-code-in-vscode/
+
+
+vue.config.js:
+module.exports = {
+	configureWebpack: {
+	    // provide the app's title in webpack's name field, so that
+	    // it can be accessed in index.html to inject the correct title.
+	    devtool: 'source-map',
+	    name: name,
+	    resolve: {
+	      alias: {
+		'@': resolve('src')
+	      }
+	    }
+}

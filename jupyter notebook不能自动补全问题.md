@@ -5,3 +5,5 @@ ipython --version
 
 即
 pip3 install ipython==7.1.1
+或者升级ipython到pip install --upgrade ipython
+
