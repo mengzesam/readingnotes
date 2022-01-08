@@ -1,0 +1,4 @@
+普通用户不能备份？？？？？？？给grant all也不行
+
+ mysqldump -uroot -p --databases turbineintelligence >db.sql
+
